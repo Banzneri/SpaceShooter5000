@@ -7,9 +7,13 @@ public class PlayerShoot : MonoBehaviour {
 	[SerializeField] private GameObject _threeShotPrefab;
 	[SerializeField] private GameObject _gunEnd;
 	[SerializeField] private ParticleSystem _shootParticles;
+	[SerializeField] private float _fireRate;
+	[SerializeField] private AudioClip _shootSound;
+	[SerializeField] private GameObject _gunShaft;
 
 	private WeaponType _currentWeapon = WeaponType.ThreeShot;
 	private bool _shooting = false;
+	private AudioSource _audio;
 
 	public WeaponType CurrentWeapon
 	{
@@ -25,10 +29,16 @@ public class PlayerShoot : MonoBehaviour {
 	}
 	
 	void Start () {
-		
+		_audio = GetComponent<AudioSource>();	
 	}
 	
 	void Update () {
+		HandleShooting();
+		HandleParticles();
+	}
+
+	private void HandleShooting()
+	{
 		if (Input.GetMouseButton(0))
 		{	
 			_currentWeapon = WeaponType.Regular;
@@ -43,11 +53,11 @@ public class PlayerShoot : MonoBehaviour {
 		{
 			_shooting = false;
 		}
-		HandleParticles();
 	}
 
 	private void Shoot()
 	{
+		_audio.PlayOneShot(_shootSound);
 		_shooting = true;
 		GameObject go = null;
 		Bullet[] bullets = null;
@@ -78,6 +88,18 @@ public class PlayerShoot : MonoBehaviour {
 		else if (!_shooting && _shootParticles.isPlaying)
 		{
 			_shootParticles.Stop();
+		}
+	}
+
+	public void HandleShaftColor(bool shooting)
+	{
+		if (shooting)
+		{
+			_gunShaft.GetComponent<Renderer>().material.color = Color.red;
+		}
+		else
+		{
+			_gunShaft.GetComponent<Renderer>().material.color = Color.white;
 		}
 	}
 }

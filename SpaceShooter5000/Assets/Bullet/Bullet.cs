@@ -7,6 +7,11 @@ public class Bullet : MonoBehaviour {
 	[SerializeField] private float _speed;
 	[SerializeField] private float _aliveTime;
 
+	public float Damage
+	{
+		get { return _damage; }
+	}
+
 	private Vector3 _direction;
 	
 	void Update () {

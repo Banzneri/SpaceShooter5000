@@ -15,7 +15,6 @@ public class WeaponMove : MonoBehaviour {
 		Vector3 forward = transform.forward;
 		// angle between mouse and weapon position in screen coordinates
 		float angle = Vector3.Angle(Input.mousePosition, cam.WorldToScreenPoint(transform.position));
-		Debug.Log(angle);
 		RaycastHit hit;
 		Ray ray = cam.ScreenPointToRay(Input.mousePosition);
 
