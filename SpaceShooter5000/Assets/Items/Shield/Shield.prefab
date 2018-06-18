@@ -96,7 +96,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -124,3 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _shieldHealth: 100
+  _shieldBar: {fileID: 114767215634925948, guid: b6a1bbbbd4c90c14f9605c8c084ad489,
+    type: 2}
+  _barPanel: {fileID: 224614735885169112, guid: d8a3c8b1ac21a1c4dae67c502be75cbf,
+    type: 2}
