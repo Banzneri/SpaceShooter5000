@@ -6,6 +6,7 @@ public class EnemyAttack : MonoBehaviour {
 	[SerializeField] private GameObject _enemyBulletPrefab;
 	[SerializeField] private float _attackDistance = 7f;
 	[SerializeField] private float _attackRate = 0.2f;
+	[SerializeField] private Transform _gunEnd;
 
 	private float _attackCounter = 0f;
 
@@ -22,8 +23,8 @@ public class EnemyAttack : MonoBehaviour {
 			_attackCounter += Time.deltaTime;
 			if (_attackCounter > _attackRate)
 			{
-				Instantiate(_enemyBulletPrefab, transform.position, transform.rotation);
-				_attackCounter = 0f;	
+				Instantiate(_enemyBulletPrefab, _gunEnd.position, transform.rotation);
+				_attackCounter = 0f;
 			}
 		}
 	}

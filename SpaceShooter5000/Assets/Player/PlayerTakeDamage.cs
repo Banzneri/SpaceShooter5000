@@ -1,11 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerTakeDamage : MonoBehaviour {
 	[SerializeField] private float _life;
 	[SerializeField] private GameObject _topPart;
-	
+
+	public float Health
+	{
+		get { return _life; }
+	}
+
 	void Start () {
 		
 	}
@@ -24,6 +30,8 @@ public class PlayerTakeDamage : MonoBehaviour {
 			Destroy(other.gameObject);
 			if (_life < 0)
 			{
+				Scene loadedLevel = SceneManager.GetActiveScene ();
+         		SceneManager.LoadScene (loadedLevel.buildIndex);
 				Destroy(this.gameObject);
 			}
 		}

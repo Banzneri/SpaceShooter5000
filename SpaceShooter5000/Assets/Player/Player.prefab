@@ -463,7 +463,6 @@ MonoBehaviour:
   _fireRate: 0
   _shootSound: {fileID: 8300000, guid: 7f290973139bb2445b87d2d46f0f14b4, type: 3}
   _gunShaft: {fileID: 0}
-  _topPart: {fileID: 0}
 --- !u!114 &114512024834835440
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -475,7 +474,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afd29f853c1eeab47ae732f07d1a998f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _life: 1000
+  _life: 100
+  _topPart: {fileID: 1694754613225392}
 --- !u!114 &114542328970375930
 MonoBehaviour:
   m_ObjectHideFlags: 1
