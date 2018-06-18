@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class EnemyTakeDamage : MonoBehaviour {
 	[SerializeField] private float _life;
-	[SerializeField] private EnemySounds _sound;
 	[SerializeField] private GameObject _explosionParticlePrefab;
 
+	private EnemySounds _sound;
 	private Renderer _renderer;
 	private Color _originalColor;
 	private bool _alive = true;
@@ -14,6 +14,7 @@ public class EnemyTakeDamage : MonoBehaviour {
 	private void Start() {
 		_renderer = GetComponent<Renderer>();
 		_originalColor = _renderer.material.color;
+		_sound = GameObject.FindGameObjectWithTag("Sounds").GetComponent<EnemySounds>();
 	}
 
 	private void OnTriggerEnter(Collider other) {

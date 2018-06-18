@@ -15,6 +15,7 @@ public class ShieldOnGround : MonoBehaviour {
 	
 	void Update () {
 		float value = _material.GetFloat("_RimEffect");
+		Debug.Log(value);
 		value = Mathf.Sin(Time.time * 5f);
 		_material.SetFloat("_RimEffect", value);
 	}

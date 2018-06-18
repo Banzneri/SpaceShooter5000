@@ -9,9 +9,12 @@ public class PlayerTakeDamage : MonoBehaviour {
 	[SerializeField] private bool _shielded;
 	
 	private float _maxLife;
+	
+	public ShieldActive CurrentShield { get; set; }
 
 	public bool Shielded
 	{
+		get { return _shielded; }
 		set { _shielded = value; }
 	}
 

@@ -9,7 +9,8 @@ public class ShieldBar : MonoBehaviour {
 	private float _maxShield;
 	private Slider _shieldBarSlider;
 
-	private void Start() {
+	public void Init()
+	{
 		_shieldBarSlider = GetComponent<Slider>();
 	}
 

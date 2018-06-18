@@ -36,6 +36,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4522469584498912}
+  - component: {fileID: 114103153874643894}
   m_Layer: 0
   m_Name: FullExplosion
   m_TagString: Untagged
@@ -101,6 +102,18 @@ Transform:
   m_Father: {fileID: 4522469584498912}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114103153874643894
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1624963159915980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7faa2415da81927428f4963f7add0b04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _aliveTime: 2
 --- !u!198 &198131615387752988
 ParticleSystem:
   m_ObjectHideFlags: 1
