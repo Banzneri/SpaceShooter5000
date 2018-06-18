@@ -40,7 +40,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1343981948133222}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.05, y: 1.67, z: -1.44}
+  m_LocalPosition: {x: -7.05, y: 1.67, z: 0.56}
   m_LocalScale: {x: 1, y: 0.39, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -127,6 +127,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _life: 100
   _sound: {fileID: 114927153235273646, guid: c38a2937a95fa98449d59ad76f893ec1, type: 2}
+  _explosionParticlePrefab: {fileID: 1624963159915980, guid: 05f2230aa79dcb540b6b865b9541e034,
+    type: 2}
 --- !u!114 &114595633450184818
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -154,3 +156,4 @@ MonoBehaviour:
   _enemyBulletPrefab: {fileID: 1156317771141784, guid: 7cb73624f722ce745b8276712d7789b8,
     type: 2}
   _attackDistance: 7
+  _attackRate: 0.1

@@ -5,9 +5,11 @@ using UnityEngine;
 public class EnemyTakeDamage : MonoBehaviour {
 	[SerializeField] private float _life;
 	[SerializeField] private EnemySounds _sound;
+	[SerializeField] private GameObject _explosionParticlePrefab;
 
 	private Renderer _renderer;
 	private Color _originalColor;
+	private bool _alive = true;
 
 	private void Start() {
 		_renderer = GetComponent<Renderer>();
@@ -15,15 +17,14 @@ public class EnemyTakeDamage : MonoBehaviour {
 	}
 
 	private void OnTriggerEnter(Collider other) {
-		Debug.Log("Collision");
 		if (other.tag == "Bullet")
 		{
-			Debug.Log("HitBullet");
 			_life -= other.gameObject.GetComponent<Bullet>().Damage;
 			Destroy(other.gameObject);
 			if (_life < 0)
 			{
 				_sound.PlayDestructionSound();
+				Instantiate(_explosionParticlePrefab, transform.position, Quaternion.identity);
 				Destroy(this.gameObject);
 			}
 			StartCoroutine(Blink());
