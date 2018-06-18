@@ -111,6 +111,7 @@ GameObject:
   - component: {fileID: 114324156610745988}
   - component: {fileID: 82217069932506384}
   - component: {fileID: 114512024834835440}
+  - component: {fileID: 114517167654313544}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -195,7 +196,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1651575243833394}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.18, z: -0.048}
+  m_LocalPosition: {x: -0, y: -0.18, z: 0.068}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4227686796789288}
@@ -462,7 +463,7 @@ MonoBehaviour:
   _shootParticles: {fileID: 198869232088418328}
   _fireRate: 0
   _shootSound: {fileID: 8300000, guid: 7f290973139bb2445b87d2d46f0f14b4, type: 3}
-  _gunShaft: {fileID: 0}
+  _gunShaft: {fileID: 1056516241151936}
 --- !u!114 &114512024834835440
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -476,6 +477,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _life: 100
   _topPart: {fileID: 1694754613225392}
+--- !u!114 &114517167654313544
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1942188440341382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 785e5290f8b381e4296fb07c1314cfb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _shieldPrefab: {fileID: 1697897058840528, guid: c24216cd56a1d2948921dbfb3528b7b9,
+    type: 2}
 --- !u!114 &114542328970375930
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -576,7 +590,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -631929531
+  randomSeed: -458129797
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -1020,10 +1034,10 @@ ParticleSystem:
     serializedVersion: 5
     enabled: 1
     type: 4
-    angle: 61.15916
+    angle: 0
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
-    radiusThickness: 0.01
+    radiusThickness: 1
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
@@ -1041,7 +1055,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.20394516
+      value: 0.18882596
       mode: 0
       spread: 0
       speed:
@@ -1470,7 +1484,7 @@ ParticleSystem:
         m_RotationOrder: 4
     separateAxes: 0
   ColorModule:
-    enabled: 0
+    enabled: 1
     gradient:
       serializedVersion: 2
       minMaxState: 1
@@ -1479,7 +1493,7 @@ ParticleSystem:
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
-        key1: {r: 1, g: 1, b: 1, a: 1}
+        key1: {r: 0.221237, g: 0.22156066, b: 0.22794116, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}

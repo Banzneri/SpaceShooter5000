@@ -12,5 +12,9 @@ public class PlayerPickupItems : MonoBehaviour {
 			go.transform.parent = transform;
 			Destroy(other.gameObject);	
 		}
+		else if (other.tag == "HealthPickup")
+		{
+			other.GetComponent<HealthOnGround>().Heal();
+		}
 	}
 }
