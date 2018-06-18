@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyMove : MonoBehaviour {
 	[SerializeField] private GameObject _player;
+	[SerializeField] private float _stopDistance;
 	// Use this for initialization
 	void Start () {
 		_player = GameObject.FindGameObjectWithTag("Player");
@@ -11,7 +12,13 @@ public class EnemyMove : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Vector3 newPos = Vector3.MoveTowards(transform.position, _player.transform.position, 0.2f);
+		Quaternion rot = Quaternion.LookRotation(_player.transform.position - transform.position, Vector3.up);
+		transform.rotation = rot;
+		if (Vector3.Distance(transform.position, _player.transform.position) < _stopDistance)
+		{
+			return;
+		}
+		Vector3 newPos = Vector3.MoveTowards(transform.position, _player.transform.position, 0.05f);
 		transform.position = newPos;
 	}
 }

@@ -51,12 +51,14 @@ public class PlayerShoot : MonoBehaviour {
 		}
 		else
 		{
+			_gunShaft.GetComponent<Renderer>().material.color = Color.white;
 			_shooting = false;
 		}
 	}
 
 	private void Shoot()
 	{
+		_gunShaft.GetComponent<Renderer>().material.color = Color.red;
 		_audio.PlayOneShot(_shootSound);
 		_shooting = true;
 		GameObject go = null;
@@ -91,9 +93,9 @@ public class PlayerShoot : MonoBehaviour {
 		}
 	}
 
-	public void HandleShaftColor(bool shooting)
+	public void HandleShaftColor()
 	{
-		if (shooting)
+		if (_shooting)
 		{
 			_gunShaft.GetComponent<Renderer>().material.color = Color.red;
 		}
