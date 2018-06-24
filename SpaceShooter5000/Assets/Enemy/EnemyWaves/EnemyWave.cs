@@ -23,6 +23,9 @@ public class EnemyWave : MonoBehaviour {
 			case EnemyWaveType.SingleStraight:
 				StartCoroutine(Spawn(_enemyPrefab));
 				break;
+			case EnemyWaveType.ThreeStraight:
+				StartCoroutine(SpawnThreeStraight(_enemyPrefab));
+				break;
 		}
 	}
 	
@@ -34,9 +37,22 @@ public class EnemyWave : MonoBehaviour {
 	{
 		while (_spawnTimer < _spawnDuration)
 		{
-			Debug.Log("SPawn");
 			yield return new WaitForSeconds(_spawnRate);
 			Instantiate(enemy, transform.position, Quaternion.identity);
+		}
+		Destroy(gameObject);
+	}
+
+	private IEnumerator SpawnThreeStraight(GameObject enemy)
+	{
+		while (_spawnTimer < _spawnDuration)
+		{
+			Vector3 rightPos = transform.position + transform.right * 2;
+			Vector3 leftPos = transform.position - transform.right * 2;
+			yield return new WaitForSeconds(_spawnRate);
+			Instantiate(enemy, transform.position, Quaternion.identity);
+			Instantiate(enemy, rightPos, Quaternion.identity);
+			Instantiate(enemy, leftPos, Quaternion.identity);
 		}
 		Destroy(gameObject);
 	}

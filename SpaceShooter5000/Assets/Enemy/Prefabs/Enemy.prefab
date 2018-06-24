@@ -239,7 +239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73d8fce02cb5bab49b969cb7e902c899, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _life: 30
+  _life: 10
   _explosionParticlePrefab: {fileID: 1624963159915980, guid: 05f2230aa79dcb540b6b865b9541e034,
     type: 2}
 --- !u!114 &114595633450184818
@@ -255,6 +255,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _player: {fileID: 1942188440341382, guid: 9c8d6404a23fc8c4aba98f35fba20282, type: 2}
   _stopDistance: 7
+  _speed: 0.079
 --- !u!114 &114694085476851756
 MonoBehaviour:
   m_ObjectHideFlags: 1

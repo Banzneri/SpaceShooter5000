@@ -5,6 +5,8 @@ using UnityEngine;
 public class EnemyMove : MonoBehaviour {
 	[SerializeField] private GameObject _player;
 	[SerializeField] private float _stopDistance;
+	[Range(0.005f,0.5f)]
+	[SerializeField] private float _speed;
 	// Use this for initialization
 	void Start () {
 		_player = GameObject.FindGameObjectWithTag("Player");
@@ -18,7 +20,7 @@ public class EnemyMove : MonoBehaviour {
 		{
 			return;
 		}
-		Vector3 newPos = Vector3.MoveTowards(transform.position, _player.transform.position, 0.05f);
+		Vector3 newPos = Vector3.MoveTowards(transform.position, _player.transform.position, _speed);
 		transform.position = newPos;
 	}
 }
