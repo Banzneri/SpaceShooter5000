@@ -6,7 +6,6 @@ public class SpawnItems : MonoBehaviour {
 	[SerializeField] private GameObject _spawnPlane;
 	[SerializeField] private GameObject _groundPlane;
 	[SerializeField] private float _spawnRate;
-	[SerializeField] private GameObject _healthPickup;
 	[SerializeField] private GameObject _shieldPickup;
 
 	private float _spawnTimer;
@@ -16,7 +15,6 @@ public class SpawnItems : MonoBehaviour {
 
 	public enum ItemType
 	{
-		Health,
 		Shield
 	}
 
@@ -45,9 +43,6 @@ public class SpawnItems : MonoBehaviour {
 		Vector3 spawnPos = new Vector3(randX, y, randZ);
 		switch (randomType)
 		{
-			case ItemType.Health: 
-				Instantiate(_healthPickup, spawnPos, Quaternion.identity);
-				break;
 			case ItemType.Shield:
 				Instantiate(_shieldPickup, spawnPos, Quaternion.identity);
 				break;

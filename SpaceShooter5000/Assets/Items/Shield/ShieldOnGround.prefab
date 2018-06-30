@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114238465349837518}
   m_Layer: 0
   m_Name: ShieldOnGround
-  m_TagString: Shield
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96,6 +96,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _originalColor: {r: 1, g: 1, b: 1, a: 0}
+  _shieldPrefab: {fileID: 1697897058840528, guid: c24216cd56a1d2948921dbfb3528b7b9,
+    type: 2}
 --- !u!135 &135770614241514936
 SphereCollider:
   m_ObjectHideFlags: 1
