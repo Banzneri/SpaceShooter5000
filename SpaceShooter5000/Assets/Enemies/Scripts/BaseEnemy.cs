@@ -46,9 +46,12 @@ public abstract class BaseEnemy : MonoBehaviour
 
     #endregion
 
+    private bool _Destroyed;
+
     // Use this for initialization
     public void Start()
     {
+        _Destroyed = false;
 
         // Find EnemySounds GameObject
         _SoundStorage = GameObject.FindGameObjectWithTag("Sounds").GetComponent<EnemySounds>();
@@ -77,6 +80,12 @@ public abstract class BaseEnemy : MonoBehaviour
 
     public void Die()
     {
+        if (_Destroyed)
+        {
+            return;
+        }
+
+        _Destroyed = true;
         _Player.GetComponent<PlayerScore>().AddScore(_ScoreValue);
         _SoundStorage.PlayDestructionSound();
         Instantiate(_ExplosionPrefab, transform.position, Quaternion.identity);

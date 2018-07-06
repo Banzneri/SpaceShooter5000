@@ -116,8 +116,6 @@ public void MakeWave(Vector3 pos)
 		float zCoord = (bounds.max.z - bounds.min.z) - ((bounds.max.z - bounds.min.z) * hit.textureCoord.y);
 		float column = (xCoord/xStep);// + 0.5;
 		float row = (zCoord/zStep);// + 0.5;
-		Debug.Log("COLUMN: " + hit.textureCoord.x);
-		Debug.Log("ROW: " + hit.textureCoord.y);
 		splashAtPoint((int)column, (int)row);
 	}
 }

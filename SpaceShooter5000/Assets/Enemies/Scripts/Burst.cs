@@ -30,6 +30,11 @@ namespace SpaceShooter
         [SerializeField]
         private SpawnPoint _SpawnPoint;
 
+        // Link next burst to this one
+        [SerializeField]
+        private bool _LinkBurst;
+
+
         #endregion
 
         #region Private Variables

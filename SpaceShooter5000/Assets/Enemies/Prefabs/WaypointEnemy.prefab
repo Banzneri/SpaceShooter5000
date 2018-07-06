@@ -126,5 +126,5 @@ MonoBehaviour:
   _ExplosionPrefab: {fileID: 1624963159915980, guid: 05f2230aa79dcb540b6b865b9541e034,
     type: 2}
   _StartHealth: 100
-  _ScoreValue: 1000
+  _ScoreValue: 10
   _Player: {fileID: 0}

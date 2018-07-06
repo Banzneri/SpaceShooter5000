@@ -32,6 +32,7 @@ namespace SpaceShooter
             // Is Burst finished
             bool ContinueCurrentBurst = _Bursts[_Current].Bursting();
 
+
             // If burst is finished, move to the next one
             if (!ContinueCurrentBurst)
             {
