@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -473,7 +473,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f5c07ce665f17c49a165464090a5bf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _EnemyType: {fileID: 1824538429509856, guid: 8d6746338563a694cbe45fb9b50f7466, type: 2}
+  _EnemyType: {fileID: 1824538429509856, guid: 6fa1e5458f29027448c15d53ee2bf4ad, type: 2}
   _Iterations: 5
   _Rate: 0.5
   _Type: 1
@@ -572,7 +572,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f5c07ce665f17c49a165464090a5bf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _EnemyType: {fileID: 1824538429509856, guid: 8d6746338563a694cbe45fb9b50f7466, type: 2}
+  _EnemyType: {fileID: 1824538429509856, guid: 6fa1e5458f29027448c15d53ee2bf4ad, type: 2}
   _Iterations: 5
   _Rate: 0.5
   _Type: 1
@@ -1547,7 +1547,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f5c07ce665f17c49a165464090a5bf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _EnemyType: {fileID: 1824538429509856, guid: 8d6746338563a694cbe45fb9b50f7466, type: 2}
+  _EnemyType: {fileID: 1824538429509856, guid: 6fa1e5458f29027448c15d53ee2bf4ad, type: 2}
   _Iterations: 5
   _Rate: 0.5
   _Type: 1
@@ -1742,12 +1742,12 @@ Prefab:
     - target: {fileID: 224601576569059316, guid: 8b95b15cb5d79b94c8e003000c6abef3,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 833
+      value: 286
       objectReference: {fileID: 0}
     - target: {fileID: 224601576569059316, guid: 8b95b15cb5d79b94c8e003000c6abef3,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 483.5
+      value: 161
       objectReference: {fileID: 0}
     - target: {fileID: 1512971186089796, guid: 8b95b15cb5d79b94c8e003000c6abef3, type: 2}
       propertyPath: m_TagString
@@ -1852,13 +1852,13 @@ Prefab:
         type: 2}
       propertyPath: _EnemyType
       value: 
-      objectReference: {fileID: 1824538429509856, guid: 8d6746338563a694cbe45fb9b50f7466,
+      objectReference: {fileID: 1824538429509856, guid: 6fa1e5458f29027448c15d53ee2bf4ad,
         type: 2}
     - target: {fileID: 114786464236625474, guid: 60d11f4f7f642354e86d4f1270a405a8,
         type: 2}
       propertyPath: _EnemyType
       value: 
-      objectReference: {fileID: 1824538429509856, guid: 8d6746338563a694cbe45fb9b50f7466,
+      objectReference: {fileID: 1824538429509856, guid: 6fa1e5458f29027448c15d53ee2bf4ad,
         type: 2}
     - target: {fileID: 114830340064203876, guid: 60d11f4f7f642354e86d4f1270a405a8,
         type: 2}
@@ -1876,7 +1876,7 @@ Prefab:
         type: 2}
       propertyPath: _EnemyType
       value: 
-      objectReference: {fileID: 1824538429509856, guid: 8d6746338563a694cbe45fb9b50f7466,
+      objectReference: {fileID: 1824538429509856, guid: 6fa1e5458f29027448c15d53ee2bf4ad,
         type: 2}
     - target: {fileID: 114487687404057656, guid: 60d11f4f7f642354e86d4f1270a405a8,
         type: 2}
