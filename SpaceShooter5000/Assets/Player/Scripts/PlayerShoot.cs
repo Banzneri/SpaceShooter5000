@@ -3,38 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerShoot : MonoBehaviour {
-	[SerializeField] private Weapon _currenDefaultWeapon;
-	[SerializeField] private Weapon _currentExtraWeapon;
+	public Weapon _currenDefaultWeapon;
+	public Weapon _currentExtraWeapon;
 
 	private bool _shooting = false;
 	private AudioSource _audio;
-
-	public Weapon DefaultWeapon
-	{
-		get { return _currenDefaultWeapon; }
-		set { _currenDefaultWeapon = value; }
-	}
-
-	public Weapon ExtraWeapon
-	{
-		get { return _currentExtraWeapon; }
-		set { _currentExtraWeapon = value; }
-	}
-
-	public bool Shooting
-	{
-		get { return _shooting; }
-	}
 	
 	void Start () {
 		_audio = GetComponent<AudioSource>();	
 	}
 	
 	void Update () {
+		HandleInput();
 		HandleShooting();
 	}
 
-	private void HandleShooting()
+	private void HandleInput()
 	{
 		if (PlayerInput.DefaultGunDown())
 		{	
@@ -54,26 +38,41 @@ public class PlayerShoot : MonoBehaviour {
 		}
 	}
 
-	private IEnumerator Shoot(Weapon gun)
+	public void HandleShooting()
 	{
-		while (gun.shooting)
+		if (_currenDefaultWeapon.shooting)
 		{
-			yield return new WaitForSeconds(gun.FireRate);
-			gun.Shoot();
-		}		
+			FireGunAutomatic(_currenDefaultWeapon);
+		}
+		if (_currentExtraWeapon.shooting)
+		{
+			FireGunAutomatic(_currentExtraWeapon);
+		}
 	}
+
+	public void FireGunAutomatic(Weapon gun)
+	{
+		gun.fireCounter += Time.deltaTime;
+		if (gun.fireCounter > gun._fireRate)
+		{
+			gun.Shoot();
+			gun.fireCounter = 0;
+		}
+	}
+
 	private void StartShooting(Weapon gun)
 	{
 		gun.shooting = true;
-		foreach (var particle in gun.Particles) particle.Play();
-		foreach (var barrel in gun.Barrels) barrel.SetColor(true);
-		StartCoroutine(Shoot(gun));
+		foreach (var particle in gun._shootParticles) particle.Play();
+		foreach (var barrel in gun._gunBarrels) barrel.SetColor(true);
+		gun.Shoot();
 	}
 
 	private void StopShooting(Weapon gun)
 	{
 		gun.shooting = false;
-		foreach (var particle in gun.Particles) particle.Stop();
-		foreach (var barrel in gun.Barrels) barrel.SetColor(false);
+		gun.fireCounter = 0;
+		foreach (var particle in gun._shootParticles) particle.Stop();
+		foreach (var barrel in gun._gunBarrels) barrel.SetColor(false);
 	}
 }

@@ -4,9 +4,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PlayerTakeDamage : MonoBehaviour {
-	public GameObject _topPart;
+	// the "hat" of the ship
+	public GameObject _head;
 	public int _maxLives;
 
+	// 
 	[HideInInspector] public bool _shielded = false;
 	[HideInInspector] public int _lives;
 	
@@ -17,27 +19,18 @@ public class PlayerTakeDamage : MonoBehaviour {
 	}
 
 	private void OnTriggerEnter(Collider other) {
-		Debug.Log("Collision");
 		if (_shielded)
 		{
 			return;
 		}
-		if (other.tag == "EnemyBullet")
+		if (other.tag == "EnemyBullet" || other.tag == "Enemy")
 		{
 			LoseLife();
 		}
 	}
 
-	private IEnumerator OnDamage()
-	{
-		_topPart.GetComponent<Renderer>().material.color = Color.red;
-		yield return new WaitForSeconds(0.1f);
-		_topPart.GetComponent<Renderer>().material.color = Color.green;
-	}
-
 	private void LoseLife()
 	{
-		StartCoroutine(OnDamage());
 		_lives--;
 		if (_lives <= 0)
 		{

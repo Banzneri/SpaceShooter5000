@@ -7,6 +7,7 @@ public class Player : MonoBehaviour {
 	[SerializeField] private PlayerTakeDamage _damage;
 	[SerializeField] private PlayerPickupItems _pickUp;
 	[SerializeField] private PlayerShoot _shoot;
+	[SerializeField] private PlayerScore _score;
 
 	public int Lives
 	{
@@ -30,20 +31,29 @@ public class Player : MonoBehaviour {
 		set { _damage.CurrentShield = value; }
 	}
 
-	public float Speed
-	{ 
-		get { return _move.Speed; }
-		set { _move.Speed = value; }
-	}
-
 	public Weapon DefaultWeapon
 	{
-		get { return _shoot.DefaultWeapon; }
+		get { return _shoot._currenDefaultWeapon; }
 	}
 
 	public Weapon ExtraWeapon
 	{
-		get { return _shoot.ExtraWeapon; }
-		set { _shoot.ExtraWeapon = value; }
+		get { return _shoot._currentExtraWeapon; }
+		set { _shoot._currentExtraWeapon = value; }
+	}
+
+	public GameObject TopPart
+	{
+		get { return _damage._head; }
+	}
+
+	public float Score
+	{
+		get { return _score.f_Score; }
+	}
+
+	public float ScoreMultiplier
+	{
+		get { return _score.f_Multiplier; }
 	}
 }

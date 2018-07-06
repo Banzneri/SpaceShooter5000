@@ -3,40 +3,31 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour {
-	[SerializeField] private GunBarrel[] _gunBarrels;
-	[SerializeField] private GameObject _bulletPrefab;
-	[SerializeField] private float _fireRate = 0.2f;
-	[SerializeField] private AudioClip _shootSound;
-	[SerializeField] private ParticleSystem[] _shootParticles;
+	public GunBarrel[] _gunBarrels;
+	public GameObject _bulletPrefab;
+	public float _fireRate = 0.2f;
+	public AudioClip _shootSound;
+	public ParticleSystem[] _shootParticles;
 
 	[HideInInspector] public bool shooting = false;
+	[HideInInspector] public float fireCounter = 0;
 
-	public GunBarrel[] Barrels
-	{
-		get { return _gunBarrels; }
-	}
-
-	public float FireRate
-	{
-		get { return _fireRate; }
-		set { _fireRate = value; }
-	}
-
-	public ParticleSystem[] Particles
-	{
-		get { return _shootParticles; }
-	}
-
-	public AudioClip Audio
-	{
-		get { return _shootSound; }
-	}
+	private Vector3 _maxScale;
 
 	public void Shoot ()
 	{
 		foreach (var barrel in _gunBarrels)
 		{
-			Instantiate(_bulletPrefab, barrel.Muzzle.transform.position, barrel.Muzzle.transform.rotation);
+			Instantiate(_bulletPrefab, barrel._muzzle.transform.position, barrel._muzzle.transform.rotation);
 		}
+	}
+
+	private void Start() {
+		_maxScale = transform.localScale;
+		transform.localScale = Vector3.zero;
+	}
+
+	private void Update() {
+		transform.localScale = Vector3.MoveTowards(transform.localScale, _maxScale, 3 * Time.deltaTime);
 	}
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class GunBarrel : MonoBehaviour {
 
 	// the muzzle of the gun, i.e. the location where the bullet is spawned from
-	[SerializeField] private Transform _muzzle;
+	public Transform _muzzle;
 	[SerializeField] private Color _shootColor;
 
 	private Color _originalColor;
@@ -15,13 +15,14 @@ public class GunBarrel : MonoBehaviour {
 		_originalColor = GetComponent<Renderer>().material.color;
 	}
 
-	public Transform Muzzle
-	{
-		get { return _muzzle; }
-	}
-
 	public void SetColor(bool shooting)
 	{
 		GetComponent<Renderer>().material.color = shooting ? _shootColor : _originalColor;
+	}
+
+	private void OnDrawGizmos() {
+		Gizmos.color = Color.red;
+		Gizmos.DrawWireSphere(_muzzle.transform.position, 0.14f);
+		Gizmos.DrawLine(_muzzle.transform.position, _muzzle.transform.position + 0.5f * _muzzle.transform.forward);
 	}
 }

@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class SpawnItems : MonoBehaviour {
 	[SerializeField] private GameObject _spawnPlane;
-	[SerializeField] private GameObject _groundPlane;
 	[SerializeField] private float _spawnRate;
 	[SerializeField] private GameObject _shieldPickup;
+	[SerializeField] private GameObject _weaponPickup;
 
 	private float _spawnTimer;
 	private System.Random rand = new System.Random();
@@ -15,12 +15,13 @@ public class SpawnItems : MonoBehaviour {
 
 	public enum ItemType
 	{
-		Shield
+		Shield,
+		Weapon
 	}
 
 	private void Start() {
-		_sizeX = _groundPlane.transform.localScale.x * 10;
-		_sizeZ = _groundPlane.transform.localScale.z * 10;
+		_sizeX = _spawnPlane.transform.localScale.x * 10;
+		_sizeZ = _spawnPlane.transform.localScale.z * 10;
 	}
 	
 	void Update () {
@@ -39,12 +40,14 @@ public class SpawnItems : MonoBehaviour {
 
 		float randX = Random.Range(-_sizeX / 2, _sizeX / 2);
 		float randZ = Random.Range(-_sizeZ / 2, _sizeZ / 2);
-		float y = _spawnPlane.transform.position.y;
-		Vector3 spawnPos = new Vector3(randX, y, randZ);
+		Vector3 spawnPos = new Vector3(randX, 0, randZ);
 		switch (randomType)
 		{
 			case ItemType.Shield:
 				Instantiate(_shieldPickup, spawnPos, Quaternion.identity);
+				break;
+			case ItemType.Weapon:
+				Instantiate(_weaponPickup, spawnPos, Quaternion.identity);
 				break;
 		}
 	}

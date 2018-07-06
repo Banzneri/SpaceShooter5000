@@ -22,12 +22,7 @@ public class EnemyTakeDamage : MonoBehaviour {
 		{
 			_life -= other.gameObject.GetComponent<Bullet>().Damage;
 			Destroy(other.gameObject);
-			if (_life < 0)
-			{
-				_sound.PlayDestructionSound();
-				Instantiate(_explosionParticlePrefab, transform.position, Quaternion.identity);
-				Destroy(this.gameObject);
-			}
+			if (_life < 0) Die();
 			StartCoroutine(Blink());
 		}
 	}
@@ -37,5 +32,12 @@ public class EnemyTakeDamage : MonoBehaviour {
 		_renderer.material.color = Color.red;
 		yield return new WaitForSeconds(0.05f);
 		_renderer.material.color = _originalColor;
+	}
+
+	private void Die()
+	{
+		_sound.PlayDestructionSound();
+		Instantiate(_explosionParticlePrefab, transform.position, Quaternion.identity);
+		Destroy(this.gameObject);
 	}
 }

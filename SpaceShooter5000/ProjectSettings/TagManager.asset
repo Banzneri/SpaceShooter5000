@@ -7,12 +7,12 @@ TagManager:
   - Enemy
   - Bullet
   - EnemyBullet
-  - Shield
-  - HealthPickup
-  - BarPanel
   - Sounds
   - FlyingPlane
   - Item
+  - RipplePlane
+  - Bomb
+  - UI
   layers:
   - Default
   - TransparentFX
@@ -26,8 +26,8 @@ TagManager:
   - Enemy
   - Bullet
   - Wall
-  - 
-  - 
+  - Ripple
+  - Bomb
   - 
   - 
   - 

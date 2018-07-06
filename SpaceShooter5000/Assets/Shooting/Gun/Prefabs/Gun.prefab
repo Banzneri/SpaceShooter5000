@@ -171,10 +171,11 @@ MonoBehaviour:
   - {fileID: 114828461423545402}
   _bulletPrefab: {fileID: 1156317771141784, guid: 5d9588a78cbdd9649be5a140bac9bacb,
     type: 2}
-  _fireRate: 0.05
+  _fireRate: 0.2
   _shootSound: {fileID: 8300000, guid: 7f290973139bb2445b87d2d46f0f14b4, type: 3}
   _shootParticles:
   - {fileID: 198850590480433856, guid: 8fe785707b5be644f9906205a0166628, type: 2}
+  _weaponType: 0
   shooting: 0
 --- !u!114 &114254938951051392
 MonoBehaviour:

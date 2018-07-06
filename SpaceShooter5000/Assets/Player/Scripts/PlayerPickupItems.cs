@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerPickupItems : MonoBehaviour {
-	[SerializeField] private GameObject _shieldPrefab;
-	
 	private PlayerTakeDamage _playerDamage;
 
 	private void Start() {

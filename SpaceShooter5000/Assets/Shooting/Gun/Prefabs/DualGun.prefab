@@ -317,6 +317,7 @@ MonoBehaviour:
   _shootSound: {fileID: 8300000, guid: 7f290973139bb2445b87d2d46f0f14b4, type: 3}
   _shootParticles:
   - {fileID: 198850590480433856, guid: 8fe785707b5be644f9906205a0166628, type: 2}
+  _weaponType: 1
   shooting: 0
 --- !u!114 &114815068089478694
 MonoBehaviour:
