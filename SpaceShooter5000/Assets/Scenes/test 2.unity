@@ -1294,22 +1294,22 @@ Prefab:
     - target: {fileID: 20719774666299952, guid: 9fcc9a1911798fe44acc80c53f8fa578,
         type: 2}
       propertyPath: m_BackGroundColor.r
-      value: 0.06304065
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 20719774666299952, guid: 9fcc9a1911798fe44acc80c53f8fa578,
         type: 2}
       propertyPath: m_BackGroundColor.g
-      value: 0.09231743
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 20719774666299952, guid: 9fcc9a1911798fe44acc80c53f8fa578,
         type: 2}
       propertyPath: m_BackGroundColor.b
-      value: 0.16176468
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114060118496612802, guid: 9fcc9a1911798fe44acc80c53f8fa578,
         type: 2}
       propertyPath: maxWaveHeight
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9fcc9a1911798fe44acc80c53f8fa578, type: 2}
